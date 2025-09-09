@@ -1,0 +1,166 @@
+body {
+  background: #222;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.window {
+  background: #181818;
+  width: 500px;
+  margin: 40px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px #000a;
+  padding: 0 0 24px 0;
+  border: 2px solid #333;
+}
+.window-header {
+  background: #333;
+  border-radius: 12px 12px 0 0;
+  padding: 16px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 18px;
+}
+.icon-svg {
+  width: 24px;
+  height: 24px;
+  opacity: 0.6;
+  filter: invert(1);
+  transition: opacity 0.2s, filter 0.2s;
+  cursor: pointer;
+}
+.icon-svg:hover {
+  opacity: 1;
+  filter: invert(0.5) sepia(1) saturate(5) hue-rotate(200deg);
+}
+
+.icon-home {
+  width: 48px;
+  height: 48px;
+}
+.window-form {
+  padding: 32px 32px 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.input-group {
+  position: relative;
+  margin-bottom: 24px;
+}
+.input-group input {
+  width: 100%;
+  padding: 8px 10px 8px 10px; /* padding-top reducido */
+  border: none;
+  border-bottom: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-size: 1.1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.input-group label {
+  position: absolute;
+  left: 10px;
+  top: 12px; /* más cerca de la línea base del texto */
+  color: #eee;
+  font-size: 1.1rem;
+  pointer-events: none;
+  background: transparent;
+  transition:
+    color 0.3s,
+    top 0.3s,
+    font-size 0.3s;
+}
+.input-group input:focus {
+  border-bottom: 2px solid #1d52a2;
+}
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -10px;
+  font-size: 0.9rem;
+  color: #0066ff;
+  background: #181818;
+  padding: 0 4px;
+}
+.window-form .checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0 18px 0;
+}
+.checkbox-group label {
+  color: #fff;
+  font-size: 1.1rem;
+}
+.window-form input[type="checkbox"] {
+  accent-color: #1d52a2;
+  width: 18px;
+  height: 18px;
+}
+.window-form .button-group {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+}
+.window-form button {
+  padding: 10px 28px;
+  border: none;
+  border-radius: 6px;
+  background: #444;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: background 0.2s;
+}
+.window-form button:hover {
+  background: #1d52a2;
+  color: #222;
+}
+.image-group {
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.image-label {
+  display: block;
+  color: #eee;
+  font-size: 1rem;
+  margin-bottom: 6px;
+  margin-left: 2px;
+}
+
+.image-drop {
+  width: 100%;
+  height: 90px;
+  border: 3px dashed #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.3s;
+}
+
+.image-drop.dragover {
+  border-color: #1d52a2;
+  background: #222;
+}
+
+.image-logo {
+  width: 24px;
+  height: 24px;
+  display: block;
+  filter: invert(1);
+}
+
+.image-path {
+  color: #fff;
+  font-size: 0.95rem;
+  word-break: break-all;
+}
