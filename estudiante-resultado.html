@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Estudiante — Resultado</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Datos del estudiante</h1>
+    <table class="table" id="tabla"></table>
+    <div class="actions">
+      <a class="btn" href="estudiante.html">Volver al formulario</a>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const entries = [
+      ["Nombres", params.get("nombres")],
+      ["Apellidos", params.get("apellidos")],
+      ["Edad", params.get("edad")],
+      ["Sexo", params.get("sexo")],
+      ["Dirección", params.get("direccion")],
+      ["Correo", params.get("correo")],
+      ["Celular", params.get("celular")]
+    ];
+    const table = document.getElementById("tabla");
+    table.innerHTML = `<tr><th>Campo</th><th>Valor</th></tr>` + 
+      entries.map(([k,v]) => `<tr><td>${k}</td><td>${v ?? ""}</td></tr>`).join("");
+  </script>
+</body>
+</html>

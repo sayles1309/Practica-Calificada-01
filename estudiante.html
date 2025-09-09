@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Estudiante — Ingreso de datos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Ingreso de datos — Estudiante</h1>
+    <h2>Complete y envíe para ver el resumen</h2>
+    <form action="estudiante-resultado.html" method="get">
+      <div class="form-row"><label for="nombres">Nombres</label><input id="nombres" name="nombres" required /></div>
+      <div class="form-row"><label for="apellidos">Apellidos</label><input id="apellidos" name="apellidos" required /></div>
+      <div class="form-row"><label for="edad">Edad</label><input id="edad" name="edad" type="number" min="0" required /></div>
+      <div class="form-row">
+        <label for="sexo">Sexo</label>
+        <select id="sexo" name="sexo" required>
+          <option value="">Seleccione</option>
+          <option>Femenino</option><option>Masculino</option><option>Otro</option><option>Prefiero no decir</option>
+        </select>
+      </div>
+      <div class="form-row"><label for="direccion">Dirección</label><input id="direccion" name="direccion" /></div>
+      <div class="form-row"><label for="correo">Correo</label><input id="correo" name="correo" type="email" required /></div>
+      <div class="form-row"><label for="celular">Celular</label><input id="celular" name="celular" type="tel" /></div>
+      <div class="actions">
+        <button type="submit">Mostrar en otra página</button>
+        <button type="reset" class="btn" style="background:#999">Limpiar</button>
+      </div>
+      <small class="hint">Se enviará con método GET para visualizar los datos.</small>
+    </form>
+  </div>
+</body>
+</html>
