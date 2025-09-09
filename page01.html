@@ -1,127 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar sesión / Registrarse</title>
-    <link rel="stylesheet" href="page01.css">
+  <meta charset="UTF-8">
+  <title>Ventana con Formulario e Iconos SVG</title>
+  <link rel="stylesheet" href="page01.css">
 </head>
 <body>
-    <!-- Checkbox oculto para alternar paneles -->
-    <input type="checkbox" id="toggle-panel" hidden>
-    <div class="container">
-        <div class="form-container sign-up-container">
-            <form action="#">
-                <h1>Crear cuenta</h1>
-                
-                <span>o usa tu correo electrónico para registrarte</span>
-                <div class="input-group">
-                    <input type="text" id="nombre" name="nombre" required placeholder=" " />
-                    <label for="nombre">Nombre</label>
-                </div>
-                <div class="input-group">
-                    <input type="email" id="email-signup" name="email-signup" required placeholder=" " />
-                    <label for="email-signup">Correo electrónico</label>
-                </div>
-                <div class="input-group">
-                    <input type="password" id="password-signup" name="password-signup" required placeholder=" " />
-                    <label for="password-signup">Contraseña</label>
-                </div>
-                <div class="input-group">
-                    <input type="file" id="imagen" name="imagen" accept="image/*" class="inputfile" />
-                    <label for="imagen" class="drop-label">
-                        <span class="svg-container">
-                            <!-- Solo pon el nombre del archivo SVG, tú lo agregas a la carpeta -->
-                            <img src="mas.svg" alt="Imagen" class="svg-icon">
-                        </span>
-                        <span class="drop-text">Arrastra una imagen aquí o haz clic</span>
-                    </label>
-                </div>
-                <!-- Checkbox visible -->
-                <div class="checkbox-group">
-                    <input type="checkbox" id="terms" name="terms">
-                    <label for="terms" class="label-checkbox">
-                        Acepto los <a href="#" class="terms-link">Términos y condiciones</a>
-                    </label>
-                </div>
-                <button type="submit">Registrarse</button>
-                <div class="social-container">
-                    <a href="#" class="social">
-                        <svg width="24" height="24">
-                            <image href="facebook.svg" width="24" height="24"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="social">
-                        <svg width="24" height="24">
-                            <image href="google.svg" width="24" height="24"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="social">
-                        <svg width="24" height="24">
-                            <image href="linkedin.svg" width="24" height="24"/>
-                        </svg>
-                    </a>
-                </div>
-            </form>
-        </div>
-        <div class="form-container sign-in-container">
-            <form action="#">
-                <h1>Iniciar sesión</h1>
-                
-                <span>o usa tu cuenta</span>
-                <div class="input-group">
-                    <input type="email" id="email-signin" name="email-signin" required placeholder=" " />
-                    <label for="email-signin">Correo electrónico</label>
-                </div>
-                <div class="input-group">
-                    <input type="password" id="password-signin" name="password-signin" required placeholder=" " />
-                    <label for="password-signin">Contraseña</label>
-                </div>
-
-                
-                 <button type="submit">Iniciar sesión</button>
-                <a href="#">¿Olvidaste tu contraseña?</a>
-                <div class="social-container">
-                    <a href="#" class="social">
-                        <svg width="24" height="24">
-                            <image href="facebook.svg" width="24" height="24"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="social">
-                        <svg width="24" height="24">
-                            <image href="google.svg" width="24" height="24"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="social">
-                        <svg width="24" height="24">
-                            <image href="linkedin.svg" width="24" height="24"/>
-                        </svg>
-                    </a>
-                </div>
-            </form>
-        </div>
-        <div class="overlay-container">   
-            <div class="overlay">
-                <div class="overlay-panel overlay-left">
-                    <h1>¡Hola, amigo!</h1>
-                    <p>Introduce tus datos personales y comienza tu viaje con nosotros</p>
-                    <!-- Botón para mostrar el panel de Iniciar sesión -->
-                    <label for="toggle-panel" class="ghost btn-flex" style="cursor:pointer;">
-                        Iniciar sesión 
-                        <img src="flecha_derecha.svg" class="icon-arrow" alt="Flecha derecha">
-                    </label>
-                </div>
-                <div class="overlay-panel overlay-right">
-                    <h1>¡Bienvenido!</h1>
-                    <p>Ingresa tus datos personales y comienza tu viaje con nosotros</p>
-                    <!-- Botón para mostrar el panel de Registrarse -->
-                   <label for="toggle-panel" class="ghost btn-flex" style="cursor:pointer;">
-                     <img src="flecha_izquierda.svg" class="icon-arrow" alt="Flecha izquierda">
-                     Registrarse
-                    </label>
-                </div>
-            </div>
-        </div>
+  <div class="window">
+    <div class="window-header">
+      <!-- Iconos SVG externos -->
+      <img src="icono-home.svg" alt="Home" class="icon-svg icon-home">
+      <img src="icono-usuario.svg" alt="Usuario" class="icon-svg">
+      <img src="icono-correo.svg" alt="Correo" class="icon-svg">
+      <img src="icono-engranaje.svg" alt="Engranaje" class="icon-svg">
     </div>
+    <form class="window-form">
+      <div class="input-group">
+        <input type="text" id="name" name="name" required placeholder=" ">
+        <label for="name">Nombre</label>
+      </div>
+      <div class="input-group">
+        <input type="email" id="email" name="email" required placeholder=" ">
+        <label for="email">Correo electrónico</label>
+      </div>
+      <div class="input-group">
+        <input type="text" id="item" name="item" required placeholder=" ">
+        <label for="item">Item</label>
+      </div>
+      <div class="input-group image-group">
+        <label class="image-label">Imagen</label>
+        <div class="image-drop">
+          <img src="icono-imagen.svg" alt="Imagen" class="image-logo">
+          
+        </div>
+      </div>
+      <div class="checkbox-group">
+        <input type="checkbox" id="agree" name="agree">
+        <label for="agree">¿Está de acuerdo?</label>
+      </div>
+      <div class="button-group">
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpiar</button>
+      </div>
+    </form>
+  </div>
 </body>
 </html>
