@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    <div class="slider-row">
+        <span class="slider-label">Media volume</span>
+        <div class="slider-container">
+            <img src="img/media.svg" alt="Media Icon" class="icon" />
+            <input type="range" class="slider" min="0" max="100" step="1">
+        </div>
+    </div>
+    <div class="slider-row">
+        <span class="slider-label">Alarm volume</span>
+        <div class="slider-container">
+            <img src="img/alarm.svg" alt="Alarm Icon" class="icon" />
+            <input type="range" class="slider" min="0" max="100" step="1">
+        </div>
+    </div>
+    <div class="slider-row">
+        <span class="slider-label">Icon click callback</span>
+        <div class="slider-container">
+            <img src="img/search.svg" alt="Search Icon" class="icon" />
+            <input type="range" class="slider" min="0" max="100" step="1">
+            <img src="img/search.svg" alt="Search Icon" class="icon right" />
+        </div>
+    </div>
+    <form class="custom-form" style="margin-top:32px;">
+        <div class="form-field">
+            <input type="text" placeholder="Campo 1">
+        </div>
+        <div class="form-field">
+            <input type="text" placeholder="Campo 2">
+        </div>
+        <div class="form-field">
+            <input type="text" placeholder="Campo 3">
+        </div>
+        <div class="form-field">
+            <label>
+                <input type="checkbox"> Acepto los términos
+            </label>
+        </div>
+        <div class="form-buttons">
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpiar</button>
+        </div>
+    </form>
+</div>
+
+    
+<div class="color-card">
+    <div class="color-preview"></div>
+    <div class="color-controls">
+        <div class="color-row">
+            <label for="rRange">R</label>
+            <input type="range" id="rRange" min="0" max="255" value="255">
+            <input type="number" id="rValue" min="0" max="255" value="255">
+        </div>
+        <div class="color-row">
+            <label for="gRange">G</label>
+            <input type="range" id="gRange" min="0" max="255" value="0">
+            <input type="number" id="gValue" min="0" max="255" value="0">
+        </div>
+        <div class="color-row">
+            <label for="bRange">B</label>
+            <input type="range" id="bRange" min="0" max="255" value="125">
+            <input type="number" id="bValue" min="0" max="255" value="125">
+        </div>
+    </div>
+</div>
+</body>
+</html>
