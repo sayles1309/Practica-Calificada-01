@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ventana con Formulario e Iconos SVG</title>
+  <link rel="stylesheet" href="page01.css">
+</head>
+<body>
+  <div class="window">
+    <div class="window-header">
+      <!-- Iconos SVG externos -->
+      <img src="icono-home.svg" alt="Home" class="icon-svg icon-home">
+      <img src="icono-usuario.svg" alt="Usuario" class="icon-svg">
+      <img src="icono-correo.svg" alt="Correo" class="icon-svg">
+      <img src="icono-engranaje.svg" alt="Engranaje" class="icon-svg">
+    </div>
+    <form class="window-form">
+      <div class="input-group">
+        <input type="text" id="name" name="name" required placeholder=" ">
+        <label for="name">Nombre</label>
+      </div>
+      <div class="input-group">
+        <input type="email" id="email" name="email" required placeholder=" ">
+        <label for="email">Correo electrónico</label>
+      </div>
+      <div class="input-group">
+        <input type="text" id="item" name="item" required placeholder=" ">
+        <label for="item">Item</label>
+      </div>
+      <div class="input-group image-group">
+        <label class="image-label">Imagen</label>
+        <div class="image-drop" id="image-drop">
+          <img src="icono-imagen.svg" alt="Imagen" class="image-logo">
+          <input type="file" id="image-input" name="image-input" accept="image/*" style="display:none;">
+          <span id="image-path" class="image-path"></span>
+        </div>
+      </div>
+      <div class="checkbox-group">
+        <input type="checkbox" id="agree" name="agree">
+        <label for="agree">¿Está de acuerdo?</label>
+      </div>
+      <div class="button-group">
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpiar</button>
+      </div>
+    </form>
+  </div>
+  <script>
+const imageDrop = document.getElementById('image-drop');
+const imageInput = document.getElementById('image-input');
+const imagePath = document.getElementById('image-path');
+
+// Click en el área abre el selector de archivos
+imageDrop.addEventListener('click', () => imageInput.click());
+
+// Drag & Drop visual feedback
+imageDrop.addEventListener('dragover', e => {
+  e.preventDefault();
+  imageDrop.classList.add('dragover');
+});
+imageDrop.addEventListener('dragleave', e => {
+  e.preventDefault();
+  imageDrop.classList.remove('dragover');
+});
+imageDrop.addEventListener('drop', e => {
+  e.preventDefault();
+  imageDrop.classList.remove('dragover');
+  if (e.dataTransfer.files.length) {
+    imageInput.files = e.dataTransfer.files;
+    showPath();
+  }
+});
+
+// Cuando se selecciona archivo
+imageInput.addEventListener('change', showPath);
+
+function showPath() {
+  if (imageInput.files.length) {
+    imagePath.textContent = imageInput.files[0].name;
+  } else {
+    imagePath.textContent = '';
+  }
+}
+</script>
+</body>
+</html>
