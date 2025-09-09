@@ -11,14 +11,17 @@ body {
     margin: 0 auto;
     padding: 20px;
     text-align: center;
+    /* Crear el fondo rectangular dividido */
+    background: linear-gradient(to bottom, #f86932 50%, #e8e8e8 50%);
+    border-radius: 0; /* Sin bordes redondeados para el efecto rectangular */
+    min-height: 100vh; /* Asegurar que cubra toda la altura de la ventana */
 }
 
 /* ---- ENCABEZADO ---- */
 .header {
-    background-color: #f86932;
+    background-color: transparent; /* Quitar el fondo para que se vea el gradiente del container */
     color: white;
     padding: 60px 20px;
-    border-radius: 40px; /* Se cambia a un solo valor para un redondeo uniforme */
     margin-bottom: 40px;
 }
 
@@ -40,6 +43,7 @@ body {
     gap: 20px;
     /* Por defecto para pantallas extra grandes (>1200px) */
     grid-template-columns: repeat(3, 1fr);
+    padding: 0 20px; /* Añadir padding para separar las imágenes de los bordes */
 }
 
 .gallery-item img {
@@ -86,12 +90,7 @@ body {
     background-color: #e05a27;
 }
 
-
 /* ---- DISEÑO RESPONSIVO (MEDIA QUERIES) ---- */
-/* c. Se agrega diseño responsivo con flexbox y media queries. [cite: 4] */
-
-/* Grande (<1200px) */
-/* No se necesita una regla específica si 1200px es el ancho máximo del contenedor principal. */
 
 /* Mediano (<900px) */
 @media (max-width: 899px) {
@@ -112,8 +111,6 @@ body {
 
     .header {
         padding: 40px 15px;
-        border-bottom-left-radius: 40px;
-        border-bottom-right-radius: 40px;
     }
 
     .header h1 {
@@ -122,5 +119,9 @@ body {
 
     .header p {
         font-size: 0.9rem;
+    }
+    
+    .container {
+        padding: 10px;
     }
 }
