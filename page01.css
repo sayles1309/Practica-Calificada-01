@@ -25,13 +25,16 @@ body {
 .icon-svg {
   width: 24px;
   height: 24px;
-  opacity: 0.8;
-  transition: opacity 0.2s;
+  opacity: 0.6;
+  filter: invert(1);
+  transition: opacity 0.2s, filter 0.2s;
   cursor: pointer;
 }
 .icon-svg:hover {
   opacity: 1;
+  filter: invert(0.5) sepia(1) saturate(5) hue-rotate(200deg);
 }
+
 .icon-home {
   width: 48px;
   height: 48px;
